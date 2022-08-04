@@ -13,6 +13,9 @@ import { AdminApprovalComponent } from './components/admin-approval/admin-approv
 import { DatePipe } from '@angular/common';
 import { ApprovalService } from './services/approval.service';
 import { ViewCourseComponent } from './components/view-course/view-course.component';
+import { ViewStudentComponent } from './components/view-student/view-student.component';
+import { AddCourseByStudentComponent } from './components/add-course-by-student/add-course-by-student.component';
+import { CreateResultComponent } from './components/create-result/create-result.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ViewCourseComponent } from './components/view-course/view-course.compon
     AddStudentComponent,
     ViewResultComponent,
     AdminApprovalComponent,
-    ViewCourseComponent
+    ViewCourseComponent,
+    ViewStudentComponent,
+    AddCourseByStudentComponent,
+    CreateResultComponent
   ],
   imports: [
     CommonModule,

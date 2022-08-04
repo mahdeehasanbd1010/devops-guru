@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ApprovalService } from '../../services/approval.service';
+import { StudentService } from '../../services/student.service';
 
 export class ApprovalData{
   studentId: number = 0;
@@ -18,7 +19,8 @@ export class ApprovalData{
 export class AdminApprovalComponent implements OnInit {
 
   constructor(private datePipe: DatePipe,
-              private approvalService: ApprovalService) { }
+              private approvalService: ApprovalService,
+              private studentService: StudentService) { }
 
   public courses: any = null;
   public approvalData: any= [];
@@ -69,14 +71,21 @@ export class AdminApprovalComponent implements OnInit {
 
   ngOnInit(): void {
     this.filterApprovalData();
-    this.getALlCourse();
+    this.getAllCourse();
+    this.getAllStudentInfo();
   }
 
-  private getALlCourse(): void{
+  private getAllCourse(): void{
     this.approvalService.getAllProducts().subscribe((result: any)=>{
       this.courses = result;
-      console.log(this.courses);
+      // console.log(this.courses);
     })
+  }
+
+  private getAllStudentInfo(){
+    this.studentService.getAllStudents().subscribe((result: any)=>{
+      console.log(result);
+    });
   }
 
   filterApprovalData(){
@@ -97,7 +106,7 @@ export class AdminApprovalComponent implements OnInit {
      });
     }
 
-    console.log(this.approvalData);
+    // console.log(this.approvalData);
   }
 
   acceptApproval(studentId: number, courseId: number){

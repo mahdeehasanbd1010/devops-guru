@@ -1,0 +1,20 @@
+<h1>Student List</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Student Id</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Year</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student.s_id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.year}}</td>
+        </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" (click)="routeToStudentForm()">Add Course</button>

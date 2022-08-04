@@ -14,4 +14,7 @@ export class StudentService {
   public addStudent(product: any): Observable<any> {
     return this.http.post(environment.dynamicSettings['BaseURL']+'student', product);
   }
+  public getAllStudents(): Observable<any> {
+    return this.http.get(environment.dynamicSettings['BaseURL']+'student');
+  }
 }

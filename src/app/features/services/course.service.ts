@@ -16,4 +16,8 @@ export class CourseService {
   public getAllCourses(): Observable<any> {
     return this.http.get(environment.dynamicSettings['BaseURL']+'course');
   }
+
+  public addCourseByStudent(data: any): Observable<any> {
+    return this.http.post(environment.dynamicSettings['BaseURL']+'student/addCourse', data);
+  }
 }

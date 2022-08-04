@@ -1,5 +1,5 @@
 import { Course } from "./course";
-import { Student } from "./students";
+import { Student } from "./student";
 
 export class Grade {
     public Course: Course = new Course();
