@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseItem } from '../../models/courses';
+import { Router } from '@angular/router';
+import { Course } from '../../models/course';
 import { CourseService } from '../../services/course.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { CourseService } from '../../services/course.service';
 })
 export class AddCourseComponent implements OnInit {
   
-  public course: CourseItem = new CourseItem();
+ 
+  public course: Course = new Course(); 
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService,
+              private router: Router) { }
 
 
   ngOnInit(): void {
@@ -22,9 +25,8 @@ export class AddCourseComponent implements OnInit {
     
     console.log(this.course);
     this.courseService.addCourse(this.course).subscribe((result: any) => {
-      this.course = new CourseItem();
-      // alert(`New product added with id ${result}`);
-      // this.router.navigate(["/products"]);
+      this.course = new Course();
+      this.router.navigate(["admin/course"]);
     });
   }
 

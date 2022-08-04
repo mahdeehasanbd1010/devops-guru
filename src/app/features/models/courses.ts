@@ -1,5 +1,5 @@
 export class CourseItemInList {
-  public courseItem!: CourseItem
+  public CourseItem!: CourseItem
   public Approved!: boolean;
   public DateOfApproval!: Date;
   constructor(){

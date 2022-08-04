@@ -11,6 +11,10 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { StudentService } from './services/student.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewResultComponent } from './components/view-result/view-result.component';
+import { AdminApprovalComponent } from './components/admin-approval/admin-approval.component';
+import { DatePipe } from '@angular/common';
+import { ApprovalService } from './services/approval.service';
+import { ViewCourseComponent } from './components/view-course/view-course.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import { ViewResultComponent } from './components/view-result/view-result.compon
     CoursesComponent,
     AddCourseComponent,
     AddStudentComponent,
-    ViewResultComponent
+    ViewResultComponent,
+    AdminApprovalComponent,
+    ViewCourseComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +44,9 @@ import { ViewResultComponent } from './components/view-result/view-result.compon
   ],
   providers:[
     CourseService,
-    StudentService
+    StudentService,
+    DatePipe,
+    ApprovalService
   ]
 })
 export class FeaturesModule { }

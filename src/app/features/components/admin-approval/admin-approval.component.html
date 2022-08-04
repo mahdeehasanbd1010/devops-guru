@@ -1,0 +1,24 @@
+<h1>Admin Approval</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let approve of approvalData">
+            <td>{{approve.studentName}}</td>
+            <td>{{approve.courseName}}</td>
+            <td>{{approve.date}}</td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="acceptApproval(approve.studentId, approve.courseId)">Approved</button>
+                &nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" (click)="deleteApproval(approve.studentId, approve.courseId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>

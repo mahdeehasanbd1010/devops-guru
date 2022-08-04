@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   dynamicSettings:{
-    BaseURL:'http://localhost:4200'
+    BaseURL:'http://52.234.178.79/api/'
   }
 };
 
