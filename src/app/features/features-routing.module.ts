@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
-
+import { AddStudentComponent } from './components/add-student/add-student.component';
 
 const routes: Routes = [
   {
@@ -17,12 +17,12 @@ const routes: Routes = [
     component: AdminComponent
   },
   {
-    path: "admin/courses",
-    component:CoursesComponent
-  },
-  {
     path: "admin/add/course",
     component:AddCourseComponent
+  },
+  {
+    path: "admin/add/student",
+    component:AddStudentComponent
   }
 
 ];

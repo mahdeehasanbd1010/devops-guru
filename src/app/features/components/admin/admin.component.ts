@@ -35,6 +35,7 @@ export class AdminComponent implements OnInit {
   }
 
   routeToCourseForm(){
+    console.log('routing');
     this.router.navigate(['admin/add/course']);
   }
 

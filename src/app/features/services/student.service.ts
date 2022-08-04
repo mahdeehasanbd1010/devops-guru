@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
+export class StudentService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  public addCourse(product: any): Observable<any> {
+  public addStudent(product: any): Observable<any> {
     // return of(null);
-    return this.http.post(environment.dynamicSettings['BaseURL']+'/admin/add/course', product);
+    return this.http.post(environment.dynamicSettings['BaseURL']+'/admin/add/student', product);
   }
-  
 }

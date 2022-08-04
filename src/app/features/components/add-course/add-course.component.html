@@ -1,7 +1,7 @@
-<form class="productForm">
+<form class="courseForm">
     <h2>Add Courses</h2>
     <div class="form-group">
-        <label for="courseName">Course Id</label>
+        <label for="courseId">Course Id</label>
         <input type="text" class="form-control input-md" id="courseId" name="courseId" [(ngModel)]="course.CourseId" required autofocus>
     </div>
     <br>
@@ -16,6 +16,6 @@
     </div>
     <br>
     <div class="form-group">
-        <input type="submit" value="Add" class="btn btn-success btn-md" (click)="saveCourse()">
+        <input type="submit" value="Add" class="btn btn-success btn-md" (click)="addCourse()">
     </div>
 </form>

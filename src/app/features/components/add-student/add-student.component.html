@@ -1,0 +1,26 @@
+<form class="studentForm">
+    <h2>Add Students</h2>
+    <div class="form-group">
+        <label for="studentId">Student Id</label>
+        <input type="text" class="form-control input-md" id="studentId" name="studentId" [(ngModel)]="student.StudentId" required autofocus>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="studentName">Student Name</label>
+        <input type="text" class="form-control input-md" id="studentName" name="studentName" [(ngModel)]="student.StudentName" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control input-md" id="gender" name="gender" [(ngModel)]="student.Gender" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input type="text" class="form-control input-md" id="year" name="year" [(ngModel)]="student.Year" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-success btn-md" (click)="addStudent()">
+    </div>
+</form>

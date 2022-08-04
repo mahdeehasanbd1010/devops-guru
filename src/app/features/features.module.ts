@@ -7,27 +7,32 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { CourseService } from './services/course.service';
-
+import { AddStudentComponent } from './components/add-student/add-student.component';
+import { StudentService } from './services/student.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AdminComponent,
     HomeComponent,
     CoursesComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AddStudentComponent
   ],
   imports: [
     CommonModule,
     FeaturesRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports:[
     AdminComponent,
     HomeComponent
   ],
   providers:[
-    CourseService
+    CourseService,
+    StudentService
   ]
 })
 export class FeaturesModule { }

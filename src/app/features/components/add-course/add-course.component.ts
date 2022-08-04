@@ -17,7 +17,7 @@ export class AddCourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveCourse(){
+  addCourse(){
     console.log('add courses');
     console.log(this.course);
     this.courseService.addCourse(this.course).subscribe((result: any) => {
