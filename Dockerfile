@@ -26,4 +26,4 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/local/app/dist/devops-gurus /usr/share/nginx/html
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 3000
