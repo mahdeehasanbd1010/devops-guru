@@ -25,5 +25,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/local/app/dist/devops-gurus /usr/share/nginx/html
 
-# Expose port 80
-EXPOSE 3000
+Expose port 80
+#EXPOSE 3000
