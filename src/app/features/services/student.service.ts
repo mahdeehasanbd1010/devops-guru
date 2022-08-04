@@ -12,7 +12,6 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   public addStudent(product: any): Observable<any> {
-    // return of(null);
-    return this.http.post(environment.dynamicSettings['BaseURL']+'/admin/add/student', product);
+    return this.http.post(environment.dynamicSettings['BaseURL']+'student', product);
   }
 }

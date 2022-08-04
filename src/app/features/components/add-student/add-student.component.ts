@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../../models/students';
+import { Student } from '../../models/student';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -21,8 +21,9 @@ export class AddStudentComponent implements OnInit {
     console.log(this.student);
     this.studentService.addStudent(this.student).subscribe((result: any) => {
       this.student = new Student();
+      console.log(result);
       // alert(`New product added with id ${result}`);
-      // this.router.navigate(["/products"]);
+      // this.router.navigate(["/"]);
     });
   }
 

@@ -1,8 +1,8 @@
-import { CourseItem } from "./courses";
+import { Course } from "./course";
 import { Student } from "./students";
 
 export class Grade {
-    public Course: CourseItem = new CourseItem();
+    public Course: Course = new Course();
     public Grade!: string;
 } 
 

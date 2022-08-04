@@ -1,16 +1,10 @@
+import { Course } from "./course";
+
 export class CourseItemInList {
-  public CourseItem!: CourseItem
-  public Approved!: boolean;
-  public DateOfApproval!: Date;
+  public courses!: Course[];
+  public approved!: boolean;
+  public R_date!: Date;
   constructor(){
   }
 }
 
-export class CourseItem {
-  public CourseId!: number;
-  public CourseName!: string;
-  public Description!: string;
-  
-  constructor(){
-  }
-}
