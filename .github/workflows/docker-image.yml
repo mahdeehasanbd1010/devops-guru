@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: docker build
         run: docker build -t managementfontend:'${{github.sha}}' .
 
@@ -43,10 +42,9 @@ jobs:
         uses: Azure/k8s-deploy@v1
         with:
           manifests: |
-            k8s/backend-deployment.yml
-            k8s/backend-service.yml
+            k8s/deployment.yml
+            k8s/service.yml
 
           images: "${{secrets.DOCKER_USERNAME}}/managementfontend:${{github.sha}}"
           imagepullsecrets: docker-image-pull-secret
           action: deploy
-
