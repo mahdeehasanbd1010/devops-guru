@@ -1,0 +1,110 @@
+<!--<mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Responsive App</h1>
+</mat-toolbar>
+
+  [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  <mat-sidenav-container class="example-sidenav-container">
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches"
+    <mat-sidenav #snav fixedTopGap="56">
+      <mat-nav-list>
+        <span *ngFor="let item of menu">
+          <span *ngIf="item.children && item.children.length > 0">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Cabeceras del submenu
+                    <div fxLayout="row" fxLayoutAlign="space-between center" > 
+                      <mat-icon>{{item.iconName}}</mat-icon>
+                      {{item.displayName}}
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <span *ngFor="let child of item.children">
+                  <mat-list-item routerLink="[child.route]">
+                    Entradas de cada submenú 
+                    <div fxLayout="row" fxLayoutAlign="space-between center" > 
+                      <mat-icon>{{child.iconName}}</mat-icon>
+                      {{child.displayName}}
+                    </div>
+                  </mat-list-item>
+                </span>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </span>
+          <span *ngIf="!item.children || item.children.length === 0">
+            <mat-list-item routerLink="[item.route]">
+              Entradas principales
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <mat-icon>{{item.iconName}}</mat-icon>
+                {{item.displayName}}
+              </div>
+            </mat-list-item>
+          </span>
+        </span>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>-->
+
+        <!-- <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+
+</mat-drawer-container> -->
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Responsive App</h1>
+  </mat-toolbar>
+
+  <!-- <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 0 : 0"> -->
+    <mat-sidenav class="example-sidenav-container" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="0">
+      <mat-nav-list>
+        <span *ngFor="let item of menu">
+            <span *ngIf="!item.children || item.children.length === 0">
+              <mat-list-item >
+                <a [href]="item.route">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <mat-icon>{{item.iconName}}</mat-icon>
+                        {{item.displayName}}
+                      </div>
+                </a>
+              </mat-list-item>
+            </span>
+            
+        </span>
+        <!-- <span *ngFor="let item of menu">
+            <div class="row">
+                <div class="col"><mat-icon>{{item.iconName}}</mat-icon></div>
+                <div class="col">{{item.displayName}}</div>
+            </div>
+        </span> -->
+        <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- <mat-sidenav-content>
+      <img style='height: 100%; width: 100%; object-fit: contain;' src="https://adventus.io/wp-content/uploads/2020/12/student-portal-adventus-io-student-recruitment-2.png"/>
+    </mat-sidenav-content> -->
+  <!-- </mat-sidenav-container> -->
+</div>
+
+
+
+

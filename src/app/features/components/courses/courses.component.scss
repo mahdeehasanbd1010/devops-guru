@@ -1,0 +1,12 @@
+.productForm {
+    min-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+  @media (max-width: 500px) {
+    .productForm {
+      min-width: 90%;
+    }
+  }
