@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  dynamicSettings:{
+    BaseURL:'http://localhost:4200'
+  }
 };
