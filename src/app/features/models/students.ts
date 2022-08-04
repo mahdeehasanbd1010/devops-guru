@@ -4,8 +4,8 @@ export class Student {
     public StudentName!: string;
     public Gender!: string;
     public Year!: number;
-    public Courses!: CourseItemInList[];
+    public Courses: CourseItemInList[] = [];
 
     constructor(){
     }
-  }
+}

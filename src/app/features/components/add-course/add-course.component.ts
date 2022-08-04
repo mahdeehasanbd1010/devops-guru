@@ -19,6 +19,7 @@ export class AddCourseComponent implements OnInit {
 
   addCourse(){
     console.log('add courses');
+    
     console.log(this.course);
     this.courseService.addCourse(this.course).subscribe((result: any) => {
       this.course = new CourseItem();

@@ -10,6 +10,7 @@ import { CourseService } from './services/course.service';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { StudentService } from './services/student.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewResultComponent } from './components/view-result/view-result.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     CoursesComponent,
     AddCourseComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    ViewResultComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   exports:[
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    CoursesComponent,
+    AddCourseComponent,
+    AddStudentComponent,
+    ViewResultComponent
   ],
   providers:[
     CourseService,
