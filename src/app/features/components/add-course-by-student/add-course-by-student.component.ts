@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CourseItemInList } from '../../models/courses';
 import { CourseService } from '../../services/course.service';
 import { StudentService } from '../../services/student.service';
@@ -14,7 +15,8 @@ export class AddCourseByStudentComponent implements OnInit {
   studentId: string = ''
 
   constructor(private studentService: StudentService,
-              private courseService: CourseService) { }
+              private courseService: CourseService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,26 +24,33 @@ export class AddCourseByStudentComponent implements OnInit {
   addCourseByStudent(){
     
     this.studentService.getAllStudents().subscribe((result: any)=>{
-      console.log(result);
+      // console.log(result);
       let data: any = result;
+      let studentObject: any = null;
       let _id: any;
       
       data.forEach((element: any, index: any)=>{
+        console.log(element);
         if(element.s_id === this.studentId) {
-          // console.log('dhukse');
+          console.log('dhukse');
           element.course.push(this.course);
+          studentObject =element
           _id = element._id;
         }
       });
-      let object: any = {
-        Course: this.course,
-        _id: _id
-      }
-      console.log(data);
 
-      this.courseService.addCourseByStudent(data).subscribe((res:any)=>{
+      this.course = new CourseItemInList();
+      this.studentId = '';
+      // let object: any = {
+      //   Course: this.course,
+      //   _id: _id
+      // }
+      console.log(studentObject);
+
+      this.courseService.addCourseByStudent(studentObject).subscribe((res:any)=>{
         console.log('2nd call done');
         console.log(res);
+        this.router.navigate(["admin/course"]);
       });
       
     });

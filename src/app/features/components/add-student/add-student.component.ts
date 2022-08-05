@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Student } from '../../models/student';
 import { StudentService } from '../../services/student.service';
 
@@ -11,7 +12,8 @@ export class AddStudentComponent implements OnInit {
 
   public student: Student = new Student();
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +25,7 @@ export class AddStudentComponent implements OnInit {
       this.student = new Student();
       console.log(result);
       // alert(`New product added with id ${result}`);
-      // this.router.navigate(["/"]);
+      this.router.navigate(["admin/student"]);
     });
   }
 

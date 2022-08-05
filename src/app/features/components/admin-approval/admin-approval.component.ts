@@ -24,6 +24,7 @@ export class AdminApprovalComponent implements OnInit {
 
   public courses: any = null;
   public approvalData: any= [];
+  public studentList: any;
 
   public students: any = [
     {

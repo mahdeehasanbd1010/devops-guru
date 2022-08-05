@@ -1,1 +1,26 @@
-<p>create-result works!</p>
+<form class="courseForm">
+    <h2>Marking</h2>
+    <div class="form-group">
+        <label for="courseId">Student Id</label>
+        <input type="text" class="form-control input-md" id="courseId" name="courseId" [(ngModel)]="studentId" required autofocus>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="courseName">Course Id</label>
+        <input type="text" class="form-control input-md" id="courseName" name="courseName" [(ngModel)]="courseId" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="description">Course Name</label>
+        <input type="text" class="form-control input-md" id="description" name="description" [(ngModel)]="courseName" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="grade">Grade</label>
+        <input type="text" class="form-control input-md" id="grade" name="grade" [(ngModel)]="grade" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" value="Set" class="btn btn-success btn-md" (click)="addGrade()">
+    </div>
+</form>

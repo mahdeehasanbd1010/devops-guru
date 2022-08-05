@@ -9,6 +9,7 @@ import { AdminApprovalComponent } from './components/admin-approval/admin-approv
 import { ViewCourseComponent } from './components/view-course/view-course.component';
 import { ViewStudentComponent } from './components/view-student/view-student.component';
 import { AddCourseByStudentComponent } from './components/add-course-by-student/add-course-by-student.component';
+import { CreateResultComponent } from './components/create-result/create-result.component';
 
 const routes: Routes = [
   {
@@ -32,12 +33,20 @@ const routes: Routes = [
     component:AddStudentComponent
   },
   {
+    path: "admin/add/student/garde",
+    component:CreateResultComponent
+  },
+  {
     path:"admin/appove/course",
     component: AdminApprovalComponent
   },
   {
     path: "student/add/course",
     component: AddCourseByStudentComponent
+  },
+  {
+    path: "student/result/:studentId",
+    component: ViewResultComponent
   },
 
 ];

@@ -5,8 +5,9 @@ export class Student {
     public name!: string;
     public gender!: string;
     public year!: string;
-    public course!: CourseItemInList[]
+    public course!: CourseItemInList[] 
     
     constructor(){
+        this.course = [];
     }
 }
