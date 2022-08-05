@@ -13,12 +13,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  routeToCourseSection(){
-    this.router.navigate(["admin/course"]);
+  routeToAdmin(){
+    this.router.navigate(["admin"]);
   }
 
-  routeToStudentSection(){
-    this.router.navigate(["admin/student"]);
+  routeToStudent(){
+    this.router.navigate(["student"]);
   }
+
 
 }

@@ -26,8 +26,13 @@ export class ViewStudentComponent implements OnInit {
   }
 
   routeToStudentForm(){
-    console.log('routing');
+    // console.log('routing');
     this.router.navigate(['admin/add/student']);
+  }
+
+  routeToStudentResult(studentId: any){
+    // console.log('routing');
+    this.router.navigate(['student/result/'+studentId]);
   }
 
 }

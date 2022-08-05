@@ -16,6 +16,8 @@ import { ViewCourseComponent } from './components/view-course/view-course.compon
 import { ViewStudentComponent } from './components/view-student/view-student.component';
 import { AddCourseByStudentComponent } from './components/add-course-by-student/add-course-by-student.component';
 import { CreateResultComponent } from './components/create-result/create-result.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { StudentComponent } from './components/student/student.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CreateResultComponent } from './components/create-result/create-result.
     ViewCourseComponent,
     ViewStudentComponent,
     AddCourseByStudentComponent,
-    CreateResultComponent
+    CreateResultComponent,
+    AdminComponent,
+    StudentComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +44,14 @@ import { CreateResultComponent } from './components/create-result/create-result.
     HomeComponent,
     AddCourseComponent,
     AddStudentComponent,
-    ViewResultComponent
+    ViewResultComponent,
+    AdminApprovalComponent,
+    ViewCourseComponent,
+    ViewStudentComponent,
+    AddCourseByStudentComponent,
+    CreateResultComponent,
+    AdminComponent,
+    StudentComponent
   ],
   providers:[
     CourseService,

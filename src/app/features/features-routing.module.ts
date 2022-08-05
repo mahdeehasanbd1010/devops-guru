@@ -10,11 +10,21 @@ import { ViewCourseComponent } from './components/view-course/view-course.compon
 import { ViewStudentComponent } from './components/view-student/view-student.component';
 import { AddCourseByStudentComponent } from './components/add-course-by-student/add-course-by-student.component';
 import { CreateResultComponent } from './components/create-result/create-result.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { StudentComponent } from './components/student/student.component';
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent
+  },
+  {
+    path: "admin",
+    component: AdminComponent
+  },
+  {
+    path: "student",
+    component: StudentComponent
   },
   {
     path: "admin/course",
@@ -33,7 +43,7 @@ const routes: Routes = [
     component:AddStudentComponent
   },
   {
-    path: "admin/add/student/garde",
+    path: "admin/set/student/garde",
     component:CreateResultComponent
   },
   {

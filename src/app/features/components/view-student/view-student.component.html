@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let student of students">
-            <td>{{student.s_id}}</td>
+            <td (click)="routeToStudentResult(student.s_id)">{{student.s_id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.gender}}</td>
             <td>{{student.year}}</td>
@@ -19,4 +19,3 @@
   </table>
   <button type="button" class="btn btn-primary" (click)="routeToStudentForm()">Add Student</button>
 
-  
