@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ApprovalService } from '../../services/approval.service';
+import { CourseService } from '../../services/course.service';
 import { StudentService } from '../../services/student.service';
 
 export class ApprovalData{
@@ -20,11 +21,13 @@ export class AdminApprovalComponent implements OnInit {
 
   constructor(private datePipe: DatePipe,
               private approvalService: ApprovalService,
-              private studentService: StudentService) { }
+              private studentService: StudentService,
+              private courseService: CourseService) { }
 
-  public courses: any = null;
+  public courses: any[] = [];
   public approvalData: any= [];
-  public studentList: any;
+  public requestList: any = [];
+  public studentId: any;
 
   public students: any = [
     {
@@ -71,9 +74,8 @@ export class AdminApprovalComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    this.filterApprovalData();
     this.getAllCourse();
-    this.getAllStudentInfo();
+    this.getAllCourseInfo();
   }
 
   private getAllCourse(): void{
@@ -83,59 +85,73 @@ export class AdminApprovalComponent implements OnInit {
     })
   }
 
-  private getAllStudentInfo(){
+  private getAllCourseInfo(){
+    this.requestList = [];
     this.studentService.getAllStudents().subscribe((result: any)=>{
-      console.log(result);
+      let students: any = result;
+      students.forEach((student: any, index: any)=>{
+        let sName: any = student.name;
+        let sId: any = student.s_id;
+        student.course.forEach((course: any, i: any)=>{
+            let c: any = course;
+            // console.log(course.approval);
+            if(course.approval!==undefined && !course.approval){
+              let json = {
+                studentId: sId,
+                studentName: sName,
+                course: c
+              };
+              this.requestList.push(json);
+            }
+          });
+      });
     });
+
+    console.log(this.requestList);
+    
   }
 
-  filterApprovalData(){
 
-    let approvalDatas: any =[]
-    for(let student of this.students){
-      student.Courses.forEach((element: any, index: any)=>{
-        if(!element.Approved) {
-          let approvalData: any = {
-            studentName: student.StudentName,
-            courseName: element.CourseItem.CourseName,
-            date: element.DateOfApproval,
-            studentId: student.StudentId,
-            courseId: element.CourseItem.CourseId,
-          };
-          this.approvalData.push(approvalData);
-        }
-     });
-    }
-
-    // console.log(this.approvalData);
-  }
 
   acceptApproval(studentId: number, courseId: number){
-    console.log('accept approval');
-    for(let student of this.students){
-      if(student.StudentId === studentId){
-        student.Courses.forEach((element: any, index: any)=>{
-          if(element.CourseItem.CourseId===courseId) {
-            element.Approved = true;
-          }
-       });
-      }
-    }
-    this.filterApprovalData();
+    console.log('acceptApproval');
+    this.studentService.getAllStudents().subscribe((result: any)=>{
+      let students: any = result;
+      let studentObject: any = null;
+      students.forEach((student: any, index: any)=>{
+        if(studentId === student.s_id){
+          student.course.forEach((course: any, i: any)=>{
+            console.log(course.approval);
+            if(course.course.c_id!==courseId){
+              course.approval = true;
+              studentObject = student;
+            }
+          });
+        }
+        
+      });
+      console.log(studentObject);
+      this.courseService.addCourseByStudent(studentObject).subscribe((res: any)=>{
+        console.log(res);
+      });
+    });
+    this.getAllCourseInfo();
   }
 
   deleteApproval(studentId: number, courseId: number){
-    console.log('delete approval');
-    for(let student of this.students){
-      if(student.StudentId === studentId){
-        student.Courses.forEach((element: any, index: any)=>{
-          if(element.CourseItem.CourseId===courseId) {
-            student.Courses.splice(index,1);
-          }
-       });
-      }
-    }
-    this.filterApprovalData();
+    console.log('deleteApproval');
+    this.studentService.getAllStudents().subscribe((result: any)=>{
+      let students: any = result;
+      students.forEach((student: any, index: any)=>{
+        student.course.forEach((course: any, i: any)=>{
+            console.log(course.approval);
+            if(course.approval!==undefined && !course.approval){
+              course.approval = true;
+            }
+          });
+      });
+    });
+    this.getAllCourseInfo();
   }
 
 }

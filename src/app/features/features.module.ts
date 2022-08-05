@@ -18,6 +18,7 @@ import { AddCourseByStudentComponent } from './components/add-course-by-student/
 import { CreateResultComponent } from './components/create-result/create-result.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { StudentComponent } from './components/student/student.component';
+import { StudentRegFormComponent } from './components/student-reg-form/student-reg-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { StudentComponent } from './components/student/student.component';
     AddCourseByStudentComponent,
     CreateResultComponent,
     AdminComponent,
-    StudentComponent
+    StudentComponent,
+    StudentRegFormComponent
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,7 @@ import { AddCourseByStudentComponent } from './components/add-course-by-student/
 import { CreateResultComponent } from './components/create-result/create-result.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { StudentComponent } from './components/student/student.component';
+import { StudentRegFormComponent } from './components/student-reg-form/student-reg-form.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
     path: "student/result/:studentId",
     component: ViewResultComponent
   },
+  {
+    path: "student/form",
+    component: StudentRegFormComponent
+  }
 
 ];
 

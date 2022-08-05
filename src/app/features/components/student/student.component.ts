@@ -14,6 +14,10 @@ export class StudentComponent implements OnInit {
   }
 
   routeToAddCourseByStudent(){
-    this.router.navigate(["student"]);
+    this.router.navigate(["student/add/course"]);
+  }
+  // student/form
+  routeToStudentForm(){
+    this.router.navigate(["student/form"]);
   }
 }

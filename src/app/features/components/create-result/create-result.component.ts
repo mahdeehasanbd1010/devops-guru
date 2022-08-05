@@ -16,12 +16,15 @@ export class CreateResultComponent implements OnInit {
   public courseName!: string;
   public grade!: string;
 
+  public courseIdList: any = [];
+
 
   constructor(private studentService: StudentService,
               private router: Router,
               private courseService: CourseService) { }
 
   ngOnInit(): void {
+    this.getAllCourseInfo();
   }
 
   addGrade(){
@@ -55,6 +58,24 @@ export class CreateResultComponent implements OnInit {
       });
 
     });
+  }
+
+  private getAllCourseInfo(){
+    this.studentService.getAllStudents().subscribe((result: any)=>{
+      let students: any = result;
+      console.log(students);
+      students.forEach((student: any, index: any)=>{
+        student.course.forEach((course: any, i: any)=>{
+            if(course.course!==undefined && course.course.c_id!==undefined){
+              if(course.course.c_id!=="Mahdee Hasan"){
+                this.courseIdList.push(course.course.c_id);
+              }
+            }
+          });
+      });
+    });
+
+    // console.log(this.courseIdList);
   }
 
 }

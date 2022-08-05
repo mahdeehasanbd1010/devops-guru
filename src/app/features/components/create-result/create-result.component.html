@@ -7,7 +7,10 @@
     <br>
     <div class="form-group">
         <label for="courseName">Course Id</label>
-        <input type="text" class="form-control input-md" id="courseName" name="courseName" [(ngModel)]="courseId" required>
+        <select id="courseName" name="courseName" [(ngModel)]="courseId" class="form-control">  
+            <option *ngFor="let c_id of courseIdList">{{c_id}}</option>  
+        </select> 
+        <!-- <input type="text" class="form-control input-md" id="courseName" name="courseName" [(ngModel)]="courseId" required> -->
     </div>
     <br>
     <div class="form-group">
@@ -17,7 +20,18 @@
     <br>
     <div class="form-group">
         <label for="grade">Grade</label>
-        <input type="text" class="form-control input-md" id="grade" name="grade" [(ngModel)]="grade" required>
+        <select id="grade" name="grade" [(ngModel)]="grade" class="form-control">  
+            <option>A+</option>
+            <option>A</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>C+</option>
+            <option>C-</option>
+            <option>D</option>
+            <option>F</option>     
+        </select> 
+        <!-- <input type="text" class="form-control input-md" id="grade" name="grade" [(ngModel)]="grade" required> -->
     </div>
     <br>
     <div class="form-group">

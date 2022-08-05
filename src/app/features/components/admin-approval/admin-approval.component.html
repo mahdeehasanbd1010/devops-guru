@@ -10,14 +10,16 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let approve of approvalData">
-            <td>{{approve.studentName}}</td>
-            <td>{{approve.courseName}}</td>
-            <td>{{approve.date}}</td>
+        <tr *ngFor="let request of requestList">
+            <td>{{request.studentName}}</td>
+            <td>{{request.course.name}}</td>
+            <td>{{request.course.date}}</td>
             <td>
-                <button type="button" class="btn btn-success" (click)="acceptApproval(approve.studentId, approve.courseId)">Approved</button>
+                <button type="button" class="btn btn-success"
+                  (click)="acceptApproval(request.studentId, request.c_id)">Approved</button>
                 &nbsp;&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger" (click)="deleteApproval(approve.studentId, approve.courseId)">Delete</button>
+                <button type="button" class="btn btn-danger"
+                (click)="deleteApproval(request.studentId, request.c_id)">Delete</button>
             </td>
         </tr>
     </tbody>

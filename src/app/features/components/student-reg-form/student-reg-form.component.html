@@ -1,0 +1,16 @@
+<form class="courseForm">
+    <h2>Student Info</h2>
+    <div class="form-group">
+        <label for="studentId">Student Id</label>
+        <input type="text" class="form-control input-md" id="studentId" name="studentId" [(ngModel)]="studentId" required autofocus>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="studentName">Student Name</label>
+        <input type="text" class="form-control input-md" id="studentName" name="studentName" [(ngModel)]="studentName" required autofocus>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-success btn-md" (click)="routeToResult()">
+    </div>
+</form>
