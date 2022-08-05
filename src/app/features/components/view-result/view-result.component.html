@@ -2,7 +2,7 @@
 <h1>{{studentName}}</h1>
 <table class="table">
     <thead>
-      <tr>
+      <tr class="table-success">
         <th scope="col">Course Id</th>
         <th scope="col">Course Name</th>
         <th scope="col">Description</th>
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let result of results">
+        <tr class="table-light" *ngFor="let result of results">
             <td>{{result.course.c_id}}</td>
             <td>{{result.course.name}}</td>
             <td>{{result.course.description}}</td>

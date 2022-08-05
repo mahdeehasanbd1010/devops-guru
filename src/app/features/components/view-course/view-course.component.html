@@ -1,14 +1,14 @@
 <h1>Course List</h1>
 <table class="table">
     <thead>
-      <tr>
+      <tr class="table-success">
         <th scope="col">Course Id</th>
         <th scope="col">Course Name</th>
         <th scope="col">Description</th>
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses">
+        <tr class="table-light" *ngFor="let course of courses">
             <td>{{course.c_id}}</td>
             <td>{{course.name}}</td>
             <td>{{course.description}}</td>

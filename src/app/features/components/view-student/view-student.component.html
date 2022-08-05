@@ -1,7 +1,7 @@
 <h1>Student List</h1>
 <table class="table">
     <thead>
-      <tr>
+      <tr class="table-success">
         <th scope="col">Student Id</th>
         <th scope="col">Student Name</th>
         <th scope="col">Gender</th>
@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of students">
+        <tr class="table-light" *ngFor="let student of students">
             <td (click)="routeToStudentResult(student.s_id)">{{student.s_id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.gender}}</td>
